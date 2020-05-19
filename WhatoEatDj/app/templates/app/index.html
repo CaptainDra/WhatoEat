@@ -1,0 +1,31 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>WhatoEat</h1>
+    <p class="lead">This app can help you decide what to eat for lunch based on your refrigerator inventory</p>
+    <p><a href="{% url 'inventory' %}" class="btn btn-primary btn-large">Start! &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Step 1:</h2>
+        <p>
+            Decide whether to order take-out or cook for yourself.
+        </p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Step 2:</h2>
+        <p>Input the inventory in the refrigerator.</p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Step 3:</h2>
+        <p>Output</p>
+        <p><a class="btn btn-default" href="">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

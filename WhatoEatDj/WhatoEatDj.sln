@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "WhatoEatDj", "WhatoEatDj.pyproj", "{401EC307-132E-4F13-95FD-2A601DA79D4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{401EC307-132E-4F13-95FD-2A601DA79D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401EC307-132E-4F13-95FD-2A601DA79D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401EC307-132E-4F13-95FD-2A601DA79D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401EC307-132E-4F13-95FD-2A601DA79D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB68ACE3-9CF6-4C4D-BAB0-4DBAAF7F9D5F}
+	EndGlobalSection
+EndGlobal
