@@ -56,3 +56,10 @@ def inventory(request):
         }
     )
     
+def receive_data(request):
+    if request.POST:
+        print('get post')
+        select = request.POST.get('select',None)
+        text = request.POST.get('text',None)
+        print(select,text)
+        return render(request,'your_html.html', locals()) 

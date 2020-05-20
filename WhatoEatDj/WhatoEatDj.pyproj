@@ -57,7 +57,7 @@
     <Folder Include="WhatoEatDj\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\templates\app\WebPage1.html" />
+    <Content Include="app\templates\app\inventory.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
