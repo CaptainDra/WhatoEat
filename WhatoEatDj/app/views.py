@@ -46,6 +46,20 @@ def about(request):
 
 def inventory(request):
     assert isinstance(request, HttpRequest)
+    if request.POST:
+        print('get post')
+        check_box_list = request.POST.getlist('check_box_list')
+        #text = request.POST.getlist('text',None)
+        print(check_box_list)
+        return render(
+        request,
+        'app/menu.html',
+        {
+            'title':'Inventory',
+            'message':'Choose what you have:',
+            'year':datetime.now().year,
+        }
+    ) 
     return render(
         request,
         'app/inventory.html',
@@ -56,10 +70,5 @@ def inventory(request):
         }
     )
     
-def receive_data(request):
-    if request.POST:
-        print('get post')
-        select = request.POST.get('select',None)
-        text = request.POST.get('text',None)
-        print(select,text)
-        return render(request,'your_html.html', locals()) 
+
+

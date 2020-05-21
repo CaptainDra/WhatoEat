@@ -4,15 +4,13 @@
 
     <div class="jumbotron">
         <h1>Choose what you have</h1>
-        <p class="lead">This app can help you decide what to eat for lunch based on your refrigerator inventory</p>
-        <p><a href="" class="btn btn-primary btn-large">Start! &raquo;</a></p>
         <p>You have:</p>
-        <form>
-            <input type="checkbox" name="coffee" value="A">egg<br />
-            <input type="checkbox" name="coffee" value="B">milk<br />
-            <input type="checkbox" name="coffee" value="C">rice<br />
-            <input type="checkbox" name="coffee" value="D">tomato<br />
-            <input type="submit" onclick="createOrder()" value="confirm"><br /><br />
+        <form action ="" method="POST">{% csrf_token %}
+            <input type="checkbox" name="check_box_list" value="egg">egg<br />
+            <input type="checkbox" name="check_box_list" value="milk">milk<br />
+            <input type="checkbox" name="check_box_list" value="rice">rice<br />
+            <input type="checkbox" name="check_box_list" value="tomato">tomato<br />
+            <input type="submit" value="confirm"><br /><br />
 
             <!--<input type="text" id="order" size="20">-->
         </form>
