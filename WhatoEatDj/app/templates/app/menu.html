@@ -5,15 +5,21 @@
     <div class="jumbotron">
         <h1>Confirm what you have</h1>
         <p>You have:</p>
-        <form>
-            <input type="checkbox" name="coffee" value="A">egg<br />
-            <input type="checkbox" name="coffee" value="B">milk<br />
-            <input type="checkbox" name="coffee" value="C">rice<br />
-            <input type="checkbox" name="coffee" value="D">tomato<br />
-            <input type="submit" onclick="createOrder()" value="confirm again!"><br /><br />
-
-            <!--<input type="text" id="order" size="20">-->
-        </form>
+        <table border="1">
+            <tr>
+                <th>food</th>
+                <th>have/not(1/0)</th>
+            </tr>
+            {% for line in list%}
+                <tr>
+                    <td>{{line.inv}}</td>
+                    <td>{{line.res}}</td>
+                </tr>
+            {% endfor %}
+        </table>
     </div>
+
+    
+    
 
 {% endblock %}

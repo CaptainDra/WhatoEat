@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>Choose what you have</h1>
         <p>You have:</p>
-        <form action ="" method="POST">{% csrf_token %}
+        <form action ="{% url 'menu' %}" method="POST">{% csrf_token %}
             <input type="checkbox" name="check_box_list" value="egg">egg<br />
             <input type="checkbox" name="check_box_list" value="milk">milk<br />
             <input type="checkbox" name="check_box_list" value="rice">rice<br />
