@@ -10,9 +10,10 @@ invResult = [
     'egg','milk','rice','tomato'
 ]
 inptDicLst = [
-    # 存放一些原始数据
+    # store some data
 ]
 
+Cookable = ['you can cook:']
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -71,26 +72,29 @@ def menu(request):
         j = 0
         result = []
         inv =[]
-        #print(len(check_box_list))
+        if len(check_box_list) == 0:
+            for i in range(len(invResult)):
+                tempDic = {'inv':invResult[i],'res':''}
+                inptDicLst.append(tempDic)
+            return render(
+                request,
+                'app/menu.html',
+                {
+                    'title':'menu',
+                    'message':'Huh.......Your inventory is empty?',
+                    'year':datetime.now().year,
+                    'list': inptDicLst,
+                }
+                )
         for i in range(len(invResult)):
             if invResult[i] == check_box_list[j]:
-                #print(invResult[i],'1')
-                tempDic = {'inv':invResult[i],'res':'1'}
+                tempDic = {'inv':invResult[i],'res':'checked'}
                 inptDicLst.append(tempDic)
-                #inv.append(invResult[i])
-                #result.append('1')
                 if j+1 < len(check_box_list):
                     j += 1
             else:
-                tempDic = {'inv':invResult[i],'res':'0'}
+                tempDic = {'inv':invResult[i],'res':''}
                 inptDicLst.append(tempDic)
-                #print(invResult[i],'0')
-                #inv.append(invResult[i])
-                #result.append('0')
-        #tempDic = {'inv':inv,'res':result}
-        #inptDicLst.append(tempDic)
-        #text = request.POST.getlist('text',None)
-        #print(inptDicLst)
         return render(
         request,
         'app/menu.html',
@@ -101,5 +105,48 @@ def menu(request):
             'list': inptDicLst,
         }
     ) 
-
+def GetMenu(request):
+        assert isinstance(request, HttpRequest)
+        if request.POST:
+            check_box_list = request.POST.getlist('check_box_list')
+            checklist = ['checklist']
+            cookable = ['cookable']
+            flag = 0
+            j = 0
+            cookbook =['tomato omelette','1','0','0','1'] #That should be the data from database or come from cache
+            if len(check_box_list) == 0:
+                return render(
+                request,
+                'app/GetMenu.html',
+                {
+                    'title':'Getmenu',
+                    'message':'Huh.......How about eat air┓( ´∀` )┏',
+                    'year':datetime.now().year,
+                    'list': inptDicLst,
+                }
+            )
+            for i in range(len(invResult)):
+                if invResult[i] == check_box_list[j]:
+                    checklist.append('1')
+                    if j+1 < len(check_box_list):
+                        j += 1
+                else:
+                    checklist.append('0')
+            for k in range(1,len(cookbook)):
+                if cookbook[k] > checklist[k]:
+                        flag = 1
+            if flag == 0:
+                    cookable.append(cookbook)
+            else:
+                    flag = 0
+            return render(
+            request,
+            'app/GetMenu.html',
+            {
+                'title':'GetMenu',
+                'message':'You can cook:',
+                'year':datetime.now().year,
+                'list': cookable,
+            }
+        ) 
 

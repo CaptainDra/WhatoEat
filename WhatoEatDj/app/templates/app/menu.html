@@ -3,20 +3,16 @@
 {% block content %}
 
     <div class="jumbotron">
-        <h1>Confirm what you have</h1>
+        <h1>{{message}}</h1>
         <p>You have:</p>
-        <table border="1">
-            <tr>
-                <th>food</th>
-                <th>have/not(1/0)</th>
-            </tr>
+        <form action ="{% url 'GetMenu' %}" method="POST">{% csrf_token %}
             {% for line in list%}
-                <tr>
-                    <td>{{line.inv}}</td>
-                    <td>{{line.res}}</td>
-                </tr>
+                <input type="checkbox" name="check_box_list" value="{{line.inv}}" {{line.res}}>{{line.inv}}<br />
             {% endfor %}
-        </table>
+            <input type="submit" value="confirmed"><br /><br />
+
+            <!--<input type="text" id="order" size="20">-->
+        </form>
     </div>
 
     
