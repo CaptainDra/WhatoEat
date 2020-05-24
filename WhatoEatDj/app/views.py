@@ -110,10 +110,14 @@ def GetMenu(request):
         if request.POST:
             check_box_list = request.POST.getlist('check_box_list')
             checklist = ['checklist']
-            cookable = ['cookable']
+            cookable = ['cookable:']
             flag = 0
             j = 0
-            cookbook =['tomato omelette','1','0','0','1'] #That should be the data from database or come from cache
+            cookbook =[
+                ['tomato omelette','1','0','0','1'],
+                ['fried rice','1','0','1','0'],
+                ] #That should be the data from database or come from cache
+            print(len(cookbook))
             if len(check_box_list) == 0:
                 return render(
                 request,
@@ -132,13 +136,14 @@ def GetMenu(request):
                         j += 1
                 else:
                     checklist.append('0')
-            for k in range(1,len(cookbook)):
-                if cookbook[k] > checklist[k]:
+            for i in range(len(cookbook)):
+                for k in range(1,len(cookbook[i])):
+                    if cookbook[i][k] > checklist[k]:
                         flag = 1
-            if flag == 0:
-                    cookable.append(cookbook)
-            else:
-                    flag = 0
+                if flag == 0:
+                    cookable.append(cookbook[i][0])
+                else:
+                     flag = 0
             return render(
             request,
             'app/GetMenu.html',
