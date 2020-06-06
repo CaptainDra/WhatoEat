@@ -14,6 +14,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('inventory/', views.inventory ,name="inventory"),
+    path('exclude/', views.exclude ,name="exclude"),
     path('menu/', views.menu ,name="menu"),
     path('GetMenu/', views.GetMenu ,name="GetMenu"),
     path('login/',

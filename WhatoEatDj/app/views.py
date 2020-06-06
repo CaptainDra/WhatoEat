@@ -63,6 +63,18 @@ def inventory(request):
             'year':datetime.now().year,
         }
     )
+
+def exclude(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/exclude.html',
+        {
+            'title':'Inventory',
+            'message':'Choose what you have:',
+            'year':datetime.now().year,
+        }
+    )
     
 def menu(request):
     assert isinstance(request, HttpRequest)

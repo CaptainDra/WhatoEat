@@ -58,6 +58,7 @@
     <Folder Include="WhatoEatDj\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\exclude.html" />
     <Content Include="app\templates\app\GetMenu.html" />
     <Content Include="app\templates\app\inventory.html" />
     <Content Include="app\templates\app\menu.html" />

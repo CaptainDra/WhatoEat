@@ -1,0 +1,19 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1>Choose what you do not want to eat:</h1>
+        <p>You may allergic to:</p>
+        <form action ="{% url 'menu' %}" method="POST">{% csrf_token %}
+            <input type="checkbox" name="check_box_list" value="egg">egg<br />
+            <input type="checkbox" name="check_box_list" value="milk">milk<br />
+            <input type="checkbox" name="check_box_list" value="rice">rice<br />
+            <input type="checkbox" name="check_box_list" value="tomato">tomato<br />
+            <input type="submit" value="confirm"><br /><br />
+
+            <!--<input type="text" id="order" size="20">-->
+        </form>
+    </div>
+
+{% endblock %}
