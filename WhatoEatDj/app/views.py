@@ -9,10 +9,7 @@ from django.http import HttpRequest
 invResult = [
     'egg','milk','rice','tomato'
 ]
-inptDicLst = [
-    # store some data
-]
-
+inptDicLst = []
 Cookable = ['you can cook:']
 def home(request):
     """Renders the home page."""
@@ -84,6 +81,7 @@ def menu(request):
         j = 0
         result = []
         inv =[]
+        inptDicLst = []
         if len(check_box_list) == 0:
             for i in range(len(invResult)):
                 tempDic = {'inv':invResult[i],'res':''}
@@ -98,6 +96,7 @@ def menu(request):
                     'list': inptDicLst,
                 }
                 )
+        
         for i in range(len(invResult)):
             if invResult[i] == check_box_list[j]:
                 tempDic = {'inv':invResult[i],'res':'checked'}
